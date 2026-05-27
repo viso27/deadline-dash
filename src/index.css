@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;700&display=swap');
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+body {
+  margin: 0;
+  background: #0f0f1a;
+  overflow: hidden;
+  touch-action: none;
+}
+
+.pixel-font {
+  font-family: 'Press Start 2P', monospace;
+}
+
+.sprite-student {
+  position: relative;
+  width: 32px;
+  height: 48px;
+  image-rendering: pixelated;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+
+@keyframes float-up {
+  0% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-40px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 8px #facc15; }
+  50% { box-shadow: 0 0 20px #facc15, 0 0 40px #facc1588; }
+}
+
+@keyframes leg-run {
+  0%, 100% { transform: rotate(-20deg); }
+  50% { transform: rotate(20deg); }
+}
+
+@keyframes arm-run {
+  0%, 100% { transform: rotate(20deg); }
+  50% { transform: rotate(-20deg); }
+}
+
+.running .leg-left { animation: leg-run 0.25s infinite; transform-origin: top center; }
+.running .leg-right { animation: leg-run 0.25s infinite reverse; transform-origin: top center; }
+.running .arm-left { animation: arm-run 0.25s infinite; transform-origin: top center; }
+.running .arm-right { animation: arm-run 0.25s infinite reverse; transform-origin: top center; }
+
+.shake { animation: shake 0.4s ease-out; }
+.glow { animation: pulse-glow 1s ease-in-out infinite; }
+
+::-webkit-scrollbar { display: none; }
