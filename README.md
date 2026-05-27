@@ -72,4 +72,3 @@ Open `http://localhost:5173`
 
 ---
 
-Built for Snippet Frontend Internship — Round 1 Build Challenge.
